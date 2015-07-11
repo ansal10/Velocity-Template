@@ -1,0 +1,18 @@
+<div class="search-area-wrapper">
+    <div class="search-area container">
+        <h3 class="search-header">Have a Question?</h3>
+        <p class="search-tag-line">If you have any question you can ask below or enter what you are looking for!</p>
+        <form id="search-form" class="search-form clearfix" method="get"  autocomplete="off" novalidate="novalidate">
+            <input class="search-term required" type="text" id="s" name="s" placeholder="Type your search terms or post new question here" title="* Please enter a search term!" autocomplete="off" required="true">
+            <br>
+            <textarea id="description" form="search-form" name="desc" style="display: none" placeholder="Enter Description Here...."></textarea>
+
+            <br>
+            <input type="button" id="search-button" class="search-btn" value="Search" onclick="$('#search-form').attr('action','/Velocity-Template/index.html'); $('#search-form').submit()">
+            <input type="button" id="post-button" class="search-btn" value="Post New" onclick="$('#search-button').toggle();$('#description').toggle();$('#s').toggle();$('#cancel-button').toggle();$('#post-button').toggle();$('#submit-button').toggle()" >
+            <input type="button" id="cancel-button" class="search-btn" value="cancel" style="display: none" onclick="$('#search-button').toggle();$('#description').toggle();$('#s').toggle();$('#cancel-button').toggle();$('#submit-button').toggle();$('#post-button').toggle()">
+            <input type="button" id="submit-button" class="search-btn" value="Submit" style="display: none" onclick="$('#search-form').attr('action','/Velocity-Template/index_2.html'); $('#search-form').submit()">
+            <div id="search-error-container"></div>
+        </form>
+    </div>
+</div>
