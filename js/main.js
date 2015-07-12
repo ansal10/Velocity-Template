@@ -384,3 +384,7 @@ function reset_comments_section(){
     $('#opponent-comments-area').attr('placeholder', 'Comment in against of topic');
     $('#supporters-comments-area').attr('placeholder','Comment in Support of topic');
 }
+
+function noaction(){
+    void(0);
+}
