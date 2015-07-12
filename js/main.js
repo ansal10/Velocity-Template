@@ -385,6 +385,33 @@ function reset_comments_section(){
     $('#supporters-comments-area').attr('placeholder','Comment in Support of topic');
 }
 
-function noaction(){
-    void(0);
+function onlyopponents(){
+    $('.default-opponent').each(function(){
+        $(this).toggle();
+    });
+//    $('.only-opponent').each(function(){
+//        $(this).toggle();
+//    })
+}
+function onlysupporters(){
+    $('.default-supporter').each(function(){
+        $(this).toggle();
+    });
+//    $('.only-supporter').each(function(){
+//        $(this).toggle();
+//    })
+}
+
+function supporting_comment(){
+    var doc = $('#comments');
+    doc.toggle();
+    doc.find('label').html('You are Supporting the Topic');
+    doc.find('#save').html('Update to Support');
+}
+
+function opponent_comment(){
+    var doc =  $('#comments');
+    doc.toggle();
+    doc.find('label').html('You are Countering the Topic');
+    doc.find('#save').html('Update to Counter');
 }

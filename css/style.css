@@ -4262,8 +4262,12 @@ form.search-form input.search-btn {
 }
 
 blockquote.default.default-supporter {
+    background-color: #E0FFDE;
     border-left: 10px solid green;
+    color : #000000;
 }
 blockquote.default.default-opponent {
+    background-color: #FFE4E6;
     border-left: 10px solid red;
+    color:#000000;
 }
