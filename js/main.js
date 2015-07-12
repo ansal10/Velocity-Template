@@ -386,32 +386,74 @@ function reset_comments_section(){
 }
 
 function onlyopponents(){
+    // Show opponents if not visible
     $('.default-opponent').each(function(){
-        $(this).toggle();
+        if($(this).attr('style')!=null && $(this).attr('style').indexOf('none')>=0)
+            $(this).toggle();
     });
-//    $('.only-opponent').each(function(){
-//        $(this).toggle();
-//    })
+
+    // hide supporters if visible
+    $('.default-supporter').each(function(){
+        if($(this).attr('style')==null || $(this).attr('style').indexOf('none')<0)
+            $(this).toggle();
+    });
 }
 function onlysupporters(){
+    // Show supporters if not visible
     $('.default-supporter').each(function(){
-        $(this).toggle();
+        if($(this).attr('style')!=null && $(this).attr('style').indexOf('none')>=0)
+            $(this).toggle();
     });
-//    $('.only-supporter').each(function(){
-//        $(this).toggle();
-//    })
+
+    // hide opponents if visible
+    $('.default-opponent').each(function(){
+        if($(this).attr('style')==null || $(this).attr('style').indexOf('none')<0)
+            $(this).toggle();
+    });
+}
+function allcommments(){
+    // Show opponents if not visible
+    $('.default-opponent').each(function(){
+        if($(this).attr('style')!=null && $(this).attr('style').indexOf('none')>=0)
+            $(this).toggle();
+    });
+    // Show supporters if not visible
+    $('.default-supporter').each(function(){
+        if($(this).attr('style')!=null && $(this).attr('style').indexOf('none')>=0)
+            $(this).toggle();
+    });
 }
 
-function supporting_comment(){
-    var doc = $('#comments');
+function supporting_comment(x){
+    var doc = $('#post-comments');
     doc.toggle();
-    doc.find('label').html('You are Supporting the Topic');
-    doc.find('#save').html('Update to Support');
+    doc.find('.popover-title').html('Supporting Comment');
+    if(x==null) {
+        doc.find('label').html('You are Supporting the Topic');
+        doc.find('#save').html('Update to Support topic');
+    }
+    else {
+        doc.find('label').html(x.parent().parent().find('p').clone());
+        doc.find('#hidden-text').attr('value', '2344');
+        doc.find('#save').html('Update to Support above comment');
+    }
+
+    doc.find('textarea').focus();
 }
 
-function opponent_comment(){
-    var doc =  $('#comments');
+function opponent_comment(x){
+    var doc =  $('#post-comments');
     doc.toggle();
-    doc.find('label').html('You are Countering the Topic');
-    doc.find('#save').html('Update to Counter');
+    doc.find('.popover-title').html('Countering Comment');
+    if(x==null) {
+        doc.find('label').html('You are Countering the Topic');
+        doc.find('#save').html('Update to Counter topic');
+    }
+    else {
+        doc.find('label').html(x.parent().parent().find('p').clone());
+        doc.find('#hidden-text').attr('value','2344');
+        doc.find('#save').html('Update to Counter above comment');
+    }
+    doc.find('textarea').focus();
+
 }
