@@ -122,7 +122,7 @@ a.read:hover,
 
 .comment-container:hover { border-color:#1abc9c;}
 .form-control:focus,#site-searchform #s:focus { border-color:#1abc9c;box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(26, 188, 156, 0.6);}
-blockquote.default,.theme-color-pt .pricingTable {border-color:#1abc9c;}
+.theme-color-pt .pricingTable {border-color:#1abc9c;}
 
 
 /* Home Page Style

@@ -1,0 +1,23 @@
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.log
+
+# Intellij Files
+*.iml
+.idea
+
+# Eclipse Files
+.classpath
+.project
+.settings
+
+# Maven output
+target
+logs
+
+# Other crap
+.DS_Store
