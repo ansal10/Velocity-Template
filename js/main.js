@@ -384,3 +384,33 @@ function reset_comments_section(){
     $('#opponent-comments-area').attr('placeholder', 'Comment in against of topic');
     $('#supporters-comments-area').attr('placeholder','Comment in Support of topic');
 }
+
+function validate_postform(){
+    var falseFlag=false;
+    $('#postform').children().each(
+        function(index){
+            var field = $(this).find('input,select,textarea');
+               if(['title','description'].indexOf(field.attr('name'))>=0){
+                   if(field.val()=="") {
+                       $($(this).find('label')[1]).html('This field is required');
+                       falseFlag = true;
+                   }
+                   else if(field.val().length<20) {
+                       $($(this).find('label')[1]).html('Minimum length of 20 is required for Title');
+                       falseFlag = true;
+                   }
+                   else
+                       $($(this).find('label')[1]).html('');
+               }
+               else if(field.attr('name')=='category'){
+                   if(field.val()=='0'){
+                       $($(this).find('label')[1]).html('Select the relevent category');
+                       falseFlag = true;
+                   }
+                   else
+                       $($(this).find('label')[1]).html('');
+               }
+        }
+    );
+    return !falseFlag;
+}
